@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Project RGB Color</title>
+		<style type="text/css">
+			body {
+				box-sizing: border-box;
+				background: black;
+				color: black;
+			}
+			.parent {
+				width: 80%;
+				margin: 60px auto;
+				background: white;
+				padding: 20px;
+				text-align: center;
+				box-shadow: 3px 2px 10px rgb(22, 98, 131);
+			}
+			.parent input {
+				width: 100%;
+				margin: 10px 5px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="parent">
+			<input oninput="color()" class="r" min="0" max="255" type="range">
+			<input oninput="color()" class="g" min="0" max="255" type="range">
+			<input oninput="color()" class="b" min="0" max="255" type="range">
+			<span id="num">rgb(0, 0, 0)</span>
+		</div>
+		<script type="text/javascript">
+			let red = document.querySelector(".r");
+			let green = document.querySelector(".g");
+			let blue = document.querySelector(".b");
+			let num = document.querySelector(".num");
+			function color() {
+				document.body.style.backgroundColor ='rgb(' + red.value + ',' + green.value + ',' + blue.value + ')' ;
+				document.getElementById("num").innerHTML=  'rgb(' + red.value + ', ' + green.value + ', ' + blue.value + ')' ;
+			}
+		</script>
+	</body>
+</html>
